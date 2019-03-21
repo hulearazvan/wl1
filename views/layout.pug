@@ -1,0 +1,47 @@
+doctype html
+html
+    head
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        title Whitelabel platform
+        link(rel='stylesheet', href='/global_assets/css/bootstrap.min.css', type='text/css')
+        link(rel='stylesheet', href='/global_assets/css/bootstrap_limitless.min.css', type='text/css')
+        link(rel='stylesheet', href='/global_assets/css/layout.min.css', type='text/css')
+        link(rel='stylesheet', href='/global_assets/css/components.min.css', type='text/css')
+        link(rel='stylesheet', href='/global_assets/css/colors.min.css', type='text/css')
+        script(src='/global_assets/js/main/jquery.min.js')
+        script(src='/global_assets/js/main/bootstrap.bundle.min.js')
+    body
+        .navbar.navbar-expand-md.navbar-dark
+            .navbar-brand
+                a.d-inline-block(href='/')
+                    img(src='/global_assets/images/logo_light.png', alt='')
+            .d-md-none
+                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbar-mobile')
+                    i.icon-tree5
+                button.navbar-toggler.sidebar-mobile-main-toggle(type='button')
+                    i.icon-paragraph-justify3
+            #navbar-mobile.collapse.navbar-collapse
+                ul.navbar-nav
+                    li.nav-item
+                        a.navbar-nav-link.sidebar-control.sidebar-main-toggle.d-none.d-md-block(href='/')
+                            i.icon-paragraph-justify3
+                ul.navbar-nav.navbar-right
+                    if user
+                        li
+                            a.btn.btn-primary(href='/users/logout') Logout               
+                    else
+                        li
+                            a.btn.btn-primary(href='/users/login') Login 
+                            |&nbsp &nbsp
+                        li
+
+                        li
+                            a.btn.btn-primary(href='/users/register') Register
+                            |&nbsp &nbsp
+        .container
+            != messages('message', locals)               
+            block content
+            br
+            hr
+    footer
+        p Copyright &copy 2019        

@@ -1,0 +1,7 @@
+extend layout
+
+block content
+    h1= company.DENUMIRE
+    h2= company.CUI
+    hr 
+    a.btn.btn-default(href='/companies/edit_company/' + company._id) Edit Details

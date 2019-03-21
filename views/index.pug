@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    br
+    h1 #{title}
+    ul.list-group
+        if user
+            each company, i in companies
+                li.list-group-item
+                    a(href="/companies/"+company._id)= company.DENUMIRE
+        else
+            br
+            h2 Esti pleb

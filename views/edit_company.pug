@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1 #{title}
+    ul
+    form(method='POST', action='/companies/edit/' + company._id)
+        #form-group
+            label DENUMIRE:
+            input.form-control(name='DENUMIRE', type='text', value=company.DENUMIRE)
+        br
+        input.btn.btn-primary(type='submit', value='Submit')
